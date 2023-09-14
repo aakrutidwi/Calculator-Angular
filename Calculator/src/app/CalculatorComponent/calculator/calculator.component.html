@@ -1,0 +1,46 @@
+<div class="container">
+<div class="container">
+  <app-display [item]="currentItem"></app-display>
+</div>
+
+<div class="func">
+  <app-function
+  (updateData)="update1($event, 'functions')"
+  [btn]="function"
+  [class]="'func-btn-'+id"
+  [id]="'func-btn-'+id+'-'+i"
+  *ngFor="let function of functions;let i =index"
+></app-function>
+</div>
+
+<div class="num">
+  <app-numeric
+  (updateData)="update1($event, 'numeric')"
+  [btn]="number"
+  [class]="'num-btn-'+id"
+  [id]="'func-btn-'+id+'-'+j"
+  *ngFor="let number of numbers;let j= index"
+></app-numeric>
+
+
+<div class="operation"></div>
+<app-operation
+  (updateData)="update1($event, 'operation')"
+  [btn]="operator"
+  [class]="'operation-btn'+id"
+  [id]="'func-btn-'+id+'-'+k"
+  *ngFor="let operator of operations;let k = index"
+></app-operation>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
